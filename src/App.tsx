@@ -948,8 +948,8 @@ export default function App() {
                   <button
                     key={d.key}
                     className={`difficulty-option ${genDifficulty === d.key ? 'on' : ''}`}
-                    disabled={generatingAny}
-                    onClick={() => setGenDifficulty(d.key)}
+                    disabled={generatingCase}
+                    onClick={() => { setGenDifficulty(d.key); setGeneratedCase(null); }}
                   >
                     <b>{d.label}</b>
                     <span>{d.desc}</span>
@@ -962,8 +962,8 @@ export default function App() {
                   <button
                     key={d}
                     className={`chip ${genDept === d ? 'on' : ''}`}
-                    disabled={generatingAny}
-                    onClick={() => setGenDept(d)}
+                    disabled={generatingCase}
+                    onClick={() => { setGenDept(d); setGeneratedCase(null); }}
                   >
                     {d}
                   </button>
@@ -1035,7 +1035,7 @@ export default function App() {
                   <button
                     key={d}
                     className={`chip ${identDept === d ? 'on' : ''}`}
-                    disabled={generatingAny}
+                    disabled={generatingIdent}
                     onClick={() => setIdentDept(d)}
                   >
                     {d}
@@ -1617,6 +1617,8 @@ export default function App() {
     </div>
   );
 }
+
+
 
 
 
